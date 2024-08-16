@@ -18,6 +18,14 @@
 
 <body>
     <nav>
+        <div class="page-name">Scroll Snap</div>
+        <div class="nav__links">
+            <a href="#section1">Home</a>
+            -
+            <a href="#whats">Scroll Snap?</a>
+            -
+            <a href="#howto">How to</a>
+        </div>
     </nav>
     <section id="section1">
         <h1 class="text-gradient">Scroll Snap</h1>
@@ -36,29 +44,90 @@
         </svg>
     </section>
 
-    <section id="section2">
+    <section id="whats">
+        
         <p class="text-gradient section-title">Whats Scroll Snap?</p>
         <div class="section-explanation">
             <p class="text-gradient">Scroll snap allows content to automatically snap to a specific point on the screen
-                when the user finishes scrolling, creating a more fluid and controlled browsing experience.</p>
-            <p class="text-gradient">It serves to create more interactive and visually appealing browsing experiences, especially on websites with multiple sections or slides.</p>
+                when the user finishes scrolling, creating a more fluid and controlled browsing experience.
+                <br>It serves to create more interactive and visually appealing browsing experiences, especially on
+                websites with multiple sections or slides.
+            </p>
+            <img class="preview" src="assets/screenshots/preview.gif" alt="">
+            
         </div>
     </section>
 
 
 
-    <section id="section3">
+    <section id="howto" class="section3">
         <div class="codeSnap">
             <img src="assets/screenshots/code1.PNG" alt="1st snapshot">
         </div>
         <div class="explanation">
             <h3 class="explanation-title">Create sections</h3>
-            <p>You have to create some sections in your html.</p>
+            <p>You have to create some sections in your html like this:</p>
+            <pre>
+                &lt;section class=&quot;section3&quot;&gt;
+                    &lt;div class=&quot;codeSnap&quot;&gt;
+                        &lt;img src=&quot;assets/screenshots/code1.PNG&quot; alt=&quot;1st snapshot&quot;&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;explanation&quot;&gt;
+                        &lt;h3 class=&quot;explanation-title&quot;&gt;Create sections&lt;/h3&gt;
+                        &lt;p&gt;You have to create some sections in your html.&lt;/p&gt;
+                    &lt;/div&gt;
+                &lt;/section&gt;
+            </pre>
+        </div>
+    </section>
+
+
+    <section class="section3">
+        <div class="codeSnap">
+            <img src="assets/screenshots/code2.png" alt="3rd snapshot">
+        </div>
+        <div class="explanation">
+            <h3 class="explanation-title">Code Explanation</h3>
+            <p>
+                This CSS uses <code>scroll-snap-type</code> to control scrolling behavior.
+                The <code>y mandatory</code> setting ensures content snaps vertically along the Y-axis.
+                <br>
+                <code>scroll-padding-top</code> adds top padding to account for fixed elements like a navigation bar.
+                <code>scroll-snap-align</code> and <code>scroll-snap-stop</code> are applied to sections to align them
+                correctly when scrolling. <br> Each section is set to <code>100vh</code>, making it occupy the full viewport
+                height.
+            </p>
+            
+            <p><code>overflow: hidden</code> prevents content overflow, while <code>z-index</code> manages element
+                stacking, and <code>padding</code> adds internal spacing.</p>
         </div>
 
     </section>
-    <section id="section4"></section>
-    <section id="section5"></section>
+    
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal().reveal('#section1', {
+            distance: '0px',
+            origin: 'bottom',
+            duration: 1200,
+            easing: 'ease-in-out',
+            reset: true 
+        });
+        ScrollReveal().reveal('#whats', {
+            distance: '0px',
+            origin: 'bottom',
+            duration: 1200,
+            easing: 'ease-in-out',
+            reset: true 
+        });
+        ScrollReveal().reveal('.section3', {
+            distance: '0px',
+            origin: 'bottom',
+            duration: 700,
+            easing: 'ease-in-out',
+            reset: true 
+        });
+    </script>
 </body>
 
 </html>
