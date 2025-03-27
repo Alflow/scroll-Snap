@@ -14,6 +14,9 @@ html {
   scroll-snap-type: y mandatory;
   scroll-padding-top: 1.875rem;
   font-family: "Roboto", sans-serif;
+  @media (max-width: 768px) {
+    scroll-snap-type: none;
+  }
 }
 
 body {
@@ -47,6 +50,19 @@ nav a:hover {
   display: flex;
   align-items: center;
   color: #f8e559;
+  --min: 20;
+  --max: 20;
+  --mintrans: 1000;
+  --maxtrans: 1920;
+  font-size: clamp(
+    var(--min) * 1px,
+    calc(
+      (var(--max) - var(--min)) *
+        ((100vw - var(--mintrans) * 1px) / (var(--maxtrans) - var(--mintrans))) +
+        var(--min) * 1px
+    ),
+    var(--max) * 1px
+  ) !important;
 }
 .nav__links {
   display: flex;
@@ -54,15 +70,31 @@ nav a:hover {
   gap: 3rem;
   width: 80%;
   height: 100%;
+  --min: 14;
+  --max: 44;
+  --mintrans: 1000;
+  --maxtrans: 1920;
+  font-size: clamp(
+    var(--min) * 1px,
+    calc(
+      (var(--max) - var(--min)) *
+        ((100vw - var(--mintrans) * 1px) / (var(--maxtrans) - var(--mintrans))) +
+        var(--min) * 1px
+    ),
+    var(--max) * 1px
+  ) !important;
 }
 section {
   scroll-snap-align: start;
   scroll-snap-stop: always;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   z-index: 1;
   padding-top: 1rem;
   padding-inline: 2rem;
+  @media (max-width: 768px) {
+    min-height: unset;
+  }
 }
 
 .text-gradient {
@@ -78,16 +110,62 @@ section {
 h1 {
   font-size: 15vw;
   background-image: linear-gradient(45deg, #f8e559, #864af9);
+  --min: 90;
+  --max: 320;
+  --mintrans: 1000;
+  --maxtrans: 1920;
+  font-size: clamp(
+    var(--min) * 1px,
+    calc(
+      (var(--max) - var(--min)) *
+        ((100vw - var(--mintrans) * 1px) / (var(--maxtrans) - var(--mintrans))) +
+        var(--min) * 1px
+    ),
+    var(--max) * 1px
+  ) !important;
+  margin-bottom: 50px;
 }
 h2 {
-  font-size: 10vw;
+  --min: 50;
+  --max: 160;
+  --mintrans: 1000;
+  --maxtrans: 1920;
+  font-size: clamp(
+    var(--min) * 1px,
+    calc(
+      (var(--max) - var(--min)) *
+        ((100vw - var(--mintrans) * 1px) / (var(--maxtrans) - var(--mintrans))) +
+        var(--min) * 1px
+    ),
+    var(--max) * 1px
+  ) !important;
+
   background-image: linear-gradient(45deg, #f8e559, #864af9);
 }
 .codeSnap {
   border-radius: 16px;
   display: flex;
+  @media (max-width: 768px) {
+    border-radius: 16px 16px 0 0;
+  }
 }
-
+.codeSnap figcaption {
+  --min: 15;
+  --max: 40;
+  --mintrans: 1000;
+  --maxtrans: 1920;
+  font-size: clamp(
+    var(--min) * 1px,
+    calc(
+      (var(--max) - var(--min)) *
+        ((100vw - var(--mintrans) * 1px) / (var(--maxtrans) - var(--mintrans))) +
+        var(--min) * 1px
+    ),
+    var(--max) * 1px
+  ) !important;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
 /* _____BLOBS ________________________________________ */
 #section1 {
   position: relative;
@@ -95,6 +173,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  min-height: 100vh;
 }
 
 #section1 .blob {
@@ -120,18 +199,33 @@ h2 {
   }
 }
 
-
-#whats .section-explanation p{
+#whats .section-explanation p {
   width: 100%;
   font-size: 2vw;
   margin-bottom: 3rem;
 }
-pre{
-  font-size: 1vw;
+pre {
   padding: 1rem;
+  text-wrap: wrap;
+  --min: 12;
+  --max: 12;
+  --mintrans: 1000;
+  --maxtrans: 1920;
+  font-size: clamp(
+    var(--min) * 1px,
+    calc(
+      (var(--max) - var(--min)) *
+        ((100vw - var(--mintrans) * 1px) / (var(--maxtrans) - var(--mintrans))) +
+        var(--min) * 1px
+    ),
+    var(--max) * 1px
+  ) !important;
 }
-.preview{
+.preview {
   width: 40%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 /* SECTION 2 */
@@ -155,16 +249,31 @@ pre{
   width: 70%;
   font-size: 2rem;
   justify-content: space-around;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 .section-explanation p {
   background-image: linear-gradient(45deg, #f8e559, #4ac7f9);
+  --min: 18;
+  --max: 30;
+  --mintrans: 1000;
+  --maxtrans: 1920;
+  font-size: clamp(
+    var(--min) * 1px,
+    calc(
+      (var(--max) - var(--min)) *
+        ((100vw - var(--mintrans) * 1px) / (var(--maxtrans) - var(--mintrans))) +
+        var(--min) * 1px
+    ),
+    var(--max) * 1px
+  ) !important;
 }
 
 /* SECTION 3 
 */
 .section3 {
   display: flex;
-  flex-direction: row;
   /* justify-content: center; */
   align-items: center;
   gap: 1rem;
@@ -174,6 +283,9 @@ pre{
   /* border: solid .6px wheat; */
   height: 50%;
   overflow: hidden;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .section3 .codeSnap img {
@@ -188,15 +300,45 @@ pre{
   flex: 1;
   height: 50%;
 }
-p {
-  font-size: 1.5vw;
+.explanation p {
+  --min: 20;
+  --max: 30;
+  --mintrans: 1000;
+  --maxtrans: 1920;
+  font-size: clamp(
+    var(--min) * 1px,
+    calc(
+      (var(--max) - var(--min)) *
+        ((100vw - var(--mintrans) * 1px) / (var(--maxtrans) - var(--mintrans))) +
+        var(--min) * 1px
+    ),
+    var(--max) * 1px
+  ) !important;
 }
 
 .explanation-title {
   font-size: 3vw;
   margin-bottom: 1rem;
   color: #f8e559;
+  --min: 20;
+  --max: 54;
+  --mintrans: 1000;
+  --maxtrans: 1920;
+  font-size: clamp(
+    var(--min) * 1px,
+    calc(
+      (var(--max) - var(--min)) *
+        ((100vw - var(--mintrans) * 1px) / (var(--maxtrans) - var(--mintrans))) +
+        var(--min) * 1px
+    ),
+    var(--max) * 1px
+  ) !important;
 }
-code{
+code {
   color: #f8e559;
+}
+section {
+  @media (max-width: 768px) {
+    flex-direction: column !important;
+  }
 }
