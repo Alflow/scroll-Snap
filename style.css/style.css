@@ -208,7 +208,7 @@ pre {
   padding: 1rem;
   text-wrap: wrap;
   --min: 12;
-  --max: 12;
+  --max: 22;
   --mintrans: 1000;
   --maxtrans: 1920;
   font-size: clamp(
