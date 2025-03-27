@@ -4,19 +4,41 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scroll snap - Alflow</title>
+
+    <title>Scroll Snap Demo · Alflow</title>
+
+    <!-- Tipografía -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+    <!-- Autoría y SEO básico -->
     <meta name="author" content="Alfredo Alberruche (Alflow)" />
-    <meta name="description" content="Explicación del scroll snap en la páginas web" />
-    <meta name="keywords" content="scroll, snap, snap between sections" />
+    <meta name="description"
+        content="Ejemplo educativo y visual de scroll-snap, lightbox sin jQuery y text gradient para enseñar frontend moderno con buen rendimiento." />
+    <meta name="keywords"
+        content="scroll snap, glightbox, frontend visual, CSS moderno, lightbox sin jQuery, text gradient, diseño educativo" />
+
+    <!-- Open Graph (para compartir en redes) -->
+    <meta property="og:title" content="Scroll Snap Demo · Alflow" />
+    <meta property="og:description"
+        content="Ejemplo didáctico para mostrar scroll-snap, lightbox sin jQuery y text gradient a estudiantes." />
+    <meta property="og:image" content="https://alberruchescrollnap.netlify.app/assets/screenshots/preview.gif" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alberruchescrollnap.netlify.app/" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Scroll Snap Demo · Alflow" />
+    <meta name="twitter:description"
+        content="Demostración educativa de frontend moderno para enseñar scroll-snap y lightbox sin jQuery." />
+    <meta name="twitter:image" content="https://alberruchescrollnap.netlify.app/assets/screenshots/preview.gif" />
+
+    <!-- Estilos -->
     <link rel="stylesheet" href="style.css/style.css" />
-    
-    <!-- GLightbox CDN -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 
-
+    <!-- GLightbox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 </head>
 
 <body>
@@ -56,25 +78,27 @@
                 with multiple sections or slides.
             </p>
             <figure>
-                <a href="assets/screenshots/preview.gif" class="glightbox" data-gallery="snap" data-title="Preview del scroll snap">
-                  <img class="preview" src="assets/screenshots/preview.gif" alt="Preview del scroll snap" />
+                <a href="assets/screenshots/preview.gif" class="glightbox" data-gallery="snap"
+                    data-title="Preview del scroll snap">
+                    <img class="preview" src="assets/screenshots/preview.gif" alt="Preview del scroll snap" />
                 </a>
                 <figcaption>Preview del scroll snap</figcaption>
-              </figure>
-              
-            
+            </figure>
+
+
         </div>
     </section>
 
     <section id="howto" class="section3">
         <div class="codeSnap">
             <figure>
-                <a href="assets/screenshots/code1.PNG" class="glightbox" data-gallery="snap" data-title="Fragmento de HTML">
-                  <img src="assets/screenshots/code1.PNG" alt="Fragmento de HTML" />
+                <a href="assets/screenshots/code1.PNG" class="glightbox" data-gallery="snap"
+                    data-title="Fragmento de HTML">
+                    <img src="assets/screenshots/code1.PNG" alt="Fragmento de HTML" />
                 </a>
                 <figcaption>Fragmento de HTML</figcaption>
-              </figure>
-              
+            </figure>
+
         </div>
         <div class="explanation">
             <h3 class="explanation-title">Create sections</h3>
@@ -96,12 +120,13 @@
     <section class="section3">
         <div class="codeSnap">
             <figure>
-                <a href="assets/screenshots/code2.png" class="glightbox" data-gallery="snap" data-title="Fragmento de CSS">
-                  <img src="assets/screenshots/code2.png" alt="Fragmento de CSS" />
+                <a href="assets/screenshots/code2.png" class="glightbox" data-gallery="snap"
+                    data-title="Fragmento de CSS">
+                    <img src="assets/screenshots/code2.png" alt="Fragmento de CSS" />
                 </a>
                 <figcaption>Fragmento de CSS</figcaption>
-              </figure>
-              
+            </figure>
+
         </div>
         <div class="explanation">
             <h3 class="explanation-title">Code Explanation</h3>
@@ -124,8 +149,10 @@
             </p>
         </div>
     </section>
-    
 
+    <footer>
+        <p>Made with ❤️ by <a href="https://alberruche.com" target="_blank">Alflow</a></p>
+    </footer>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
         ScrollReveal().reveal('#section1', {
@@ -155,12 +182,12 @@
             reset: false
         });
     </script>
-<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-<script>
-  const lightbox = GLightbox({
-    selector: '.glightbox'
-  });
-</script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+        const lightbox = GLightbox({
+            selector: '.glightbox'
+        });
+    </script>
 </body>
 
 </html>

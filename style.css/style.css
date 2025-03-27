@@ -100,7 +100,6 @@ section {
 .text-gradient {
   background-size: 100%;
   background-repeat: repeat;
-
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
@@ -139,7 +138,6 @@ h2 {
     ),
     var(--max) * 1px
   ) !important;
-
   background-image: linear-gradient(45deg, #f8e559, #864af9);
 }
 .codeSnap {
@@ -166,7 +164,7 @@ h2 {
   font-style: italic;
   margin-top: 0.5rem;
 }
-/* _____BLOBS ________________________________________ */
+
 #section1 {
   position: relative;
   display: flex;
@@ -182,7 +180,6 @@ h2 {
   width: 25vw;
   margin-left: 65vw;
   margin-top: 50vh;
-  /* margin-top: 10vh; */
   animation: move 10s ease-in-out infinite;
   transform-origin: 50% 50%;
 }
@@ -190,12 +187,10 @@ h2 {
 @keyframes move {
   0%,
   100% {
-    transform: translateY(0); /* En su posición original al inicio y al final */
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(
-      -1.875rem
-    ); /* Mueve un poco hacia arriba en el punto medio */
+    transform: translateY(-1.875rem);
   }
 }
 
@@ -228,7 +223,6 @@ pre {
   }
 }
 
-/* SECTION 2 */
 #whats {
   display: flex;
   flex-direction: column;
@@ -245,7 +239,6 @@ pre {
 }
 
 .section-explanation {
-  /* border: solid 1px red; */
   width: 70%;
   font-size: 2rem;
   justify-content: space-around;
@@ -270,17 +263,13 @@ pre {
   ) !important;
 }
 
-/* SECTION 3 
-*/
 .section3 {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   gap: 1rem;
 }
 .section3 .codeSnap {
   width: 40%;
-  /* border: solid .6px wheat; */
   height: 50%;
   overflow: hidden;
   @media (max-width: 768px) {
@@ -341,4 +330,42 @@ section {
   @media (max-width: 768px) {
     flex-direction: column !important;
   }
+}
+.section3:last-of-type {
+  min-height: calc(100vh - 320px);
+  margin-bottom: 120px;
+}
+
+footer {
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  background-color: black;
+}
+
+footer p {
+  --min: 16;
+  --max: 24;
+  --mintrans: 1000;
+  --maxtrans: 1920;
+  font-size: clamp(
+    var(--min) * 1px,
+    calc(
+      (var(--max) - var(--min)) *
+        ((100vw - var(--mintrans) * 1px) / (var(--maxtrans) - var(--mintrans))) +
+        var(--min) * 1px
+    ),
+    var(--max) * 1px
+  ) !important;
+}
+
+footer a {
+  color: var(--purple) !important;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+footer a:hover {
+  color: var(--purple);
 }
